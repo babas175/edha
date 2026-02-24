@@ -3,78 +3,55 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
-import {
-  Home,
-  Search,
-  GraduationCap,
-  BookOpen,
-  BarChart3,
-  Menu,
-  X
-} from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 export default function Navbar() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
 
-  const linkClass = (path: string) =>
-    `flex items-center gap-2 px-4 py-2 rounded-full transition ${
-      pathname === path
-        ? "bg-[#142e57] text-white"
-        : "text-gray-600 hover:text-[#142e57]"
-    }`
-
-  const mobileLinkClass = (path: string) =>
-    `flex items-center gap-3 px-4 py-3 rounded-lg transition ${
-      pathname === path
-        ? "bg-[#142e57] text-white"
-        : "text-gray-700 hover:bg-gray-100"
-    }`
+  const navLinks = [
+    { name: "Accueil", href: "/" },
+    { name: "À propos", href: "/apropos" },
+    { name: "Académie", href: "/academie" },
+    { name: "Écoles", href: "/ecoles" },
+    { name: "Impact", href: "/impact" },
+    { name: "Blog", href: "/blog" },
+    { name: "Mérite National", href: "/merite" },
+    { name: "Partenariats", href: "/partenariats" },
+    { name: "Sécurité", href: "/securite" },
+    { name: "Contact", href: "/contact" },
+  ]
 
   return (
-    <header className="w-full bg-white border-b border-gray-200 relative z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <header className="w-full bg-gradient-to-r from-[#04142b] via-[#061a35] to-[#020f24] text-white shadow-md relative z-50 border-b border-white/5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
 
         {/* LOGO */}
-        <div className="flex items-center gap-3 text-[#142e57] font-semibold text-lg">
-          <div className="bg-[#142e57] p-2 rounded-lg text-white">
-            <GraduationCap size={18} />
-          </div>
-          EduHaïti
+        <div className="text-xl font-bold tracking-wide">
+          EDHA <span className="text-yellow-400">ACADEMY</span>
         </div>
 
-        {/* DESKTOP MENU */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <Link href="/" className={linkClass("/")}>
-            <Home size={16} />
-            Accueil
-          </Link>
-
-          <Link href="/rechercher" className={linkClass("/rechercher")}>
-            <Search size={16} />
-            Rechercher
-          </Link>
-
-          <Link href="/eleve" className={linkClass("/eleve")}>
-            <GraduationCap size={16} />
-            Élève
-          </Link>
-
-          <Link href="/enseignant" className={linkClass("/enseignant")}>
-            <BookOpen size={16} />
-            Enseignant
-          </Link>
-
-          <Link href="/login" className={linkClass("/login")}>
-            <BarChart3 size={16} />
-            Admin
-          </Link>
+        {/* DESKTOP NAV */}
+        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`transition hover:text-yellow-400 ${
+                pathname === link.href
+                  ? "text-yellow-400"
+                  : "text-gray-200"
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
         </nav>
 
         {/* MOBILE BUTTON */}
         <button
-          className="md:hidden text-[#142e57]"
           onClick={() => setOpen(!open)}
+          className="lg:hidden"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -82,55 +59,23 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-6 pb-6 space-y-2 shadow-lg">
-            
+        <div className="lg:hidden bg-[#0b2a55] px-6 pb-6 space-y-4">
+          {navLinks.map((link) => (
             <Link
-            href="/"
-            className={mobileLinkClass("/")}
-            onClick={() => setOpen(false)}
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className={`block py-2 transition ${
+                pathname === link.href
+                  ? "text-yellow-400 font-semibold"
+                  : "text-gray-200 hover:text-yellow-400"
+              }`}
             >
-            <Home size={18} />
-            Accueil
+              {link.name}
             </Link>
-
-            <Link
-            href="/rechercher"
-            className={mobileLinkClass("/rechercher")}
-            onClick={() => setOpen(false)}
-            >
-            <Search size={18} />
-            Rechercher
-            </Link>
-
-            <Link
-            href="/eleve"
-            className={mobileLinkClass("/eleve")}
-            onClick={() => setOpen(false)}
-            >
-            <GraduationCap size={18} />
-            Élève
-            </Link>
-
-            <Link
-            href="/enseignant"
-            className={mobileLinkClass("/enseignant")}
-            onClick={() => setOpen(false)}
-            >
-            <BookOpen size={18} />
-            Enseignant
-            </Link>
-
-            <Link
-            href="/login"
-            className={mobileLinkClass("/login")}
-            onClick={() => setOpen(false)}
-            >
-            <BarChart3 size={18} />
-            Admin
-            </Link>
-
+          ))}
         </div>
-        )}
+      )}
     </header>
   )
 }
