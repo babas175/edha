@@ -15,16 +15,15 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="min-h-screen bg-gray-100 flex flex-col">
-        
-        {/* Navbar global */}
+
+        {/* Navbar fixa */}
         <Navbar />
 
-        {/* Conteúdo das páginas */}
-        <main className="flex-1">
+        {/* Compensação da navbar fixed */}
+        <main className="flex-1 pt-15">
           {children}
         </main>
 
-        {/* Footer global */}
         <Footer />
 
       </body>
