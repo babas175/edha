@@ -8,9 +8,7 @@ export default function Merite() {
       <section className="bg-gradient-to-r from-[#04142b] via-[#061a35] to-[#020f24] text-white py-24 text-center">
         <div className="max-w-4xl mx-auto px-6">
 
-          <div className="flex justify-center mb-6 text-yellow-400 text-3xl">
-            🏅
-          </div>
+          <div className="text-yellow-400 text-3xl mb-6">🏅</div>
 
           <h1 className="text-4xl md:text-5xl font-bold">
             Mérite National EDHA
@@ -75,7 +73,7 @@ export default function Merite() {
         </div>
       </section>
 
-      {/* ================= LAURÉAT DU MOIS ================= */}
+      {/* ================= LAURÉAT ================= */}
       <section className="py-20 bg-[#eef1f5]">
         <div className="max-w-3xl mx-auto px-6 text-center">
 
@@ -115,7 +113,7 @@ export default function Merite() {
         </div>
       </section>
 
-      {/* ================= HALL D’EXCELLENCE ================= */}
+      {/* ================= HALL ================= */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
 
@@ -181,78 +179,81 @@ export default function Merite() {
         </div>
       </section>
 
-      {/* ================= VÉRIFICATION CERTIFICAT ================= */}
-      <section className="py-20 bg-gradient-to-r from-[#04142b] via-[#061a35] to-[#020f24] text-white text-center">
-        <div className="max-w-xl mx-auto px-6">
+     {/* ================= VÉRIFICATION CERTIFICAT ================= */}
+        <section className="py-24 bg-gradient-to-r from-[#04142b] via-[#061a35] to-[#020f24] text-white text-center">
+        <div className="max-w-2xl mx-auto px-6">
 
-          <h2 className="text-xl font-semibold mb-6">
+            <h2 className="text-3xl font-bold mb-4">
             Vérification de certificat
+            </h2>
+
+            <p className="text-gray-300 mb-10">
+            Entrez l'identifiant de votre certificat pour vérifier son authenticité.
+            </p>
+
+            <div className="flex justify-center items-center gap-3">
+
+            <input
+                placeholder="Ex: EDHA-MERIT-2026-00045"
+                className="w-full max-w-lg bg-[#1b2c47] border border-[#2f4363] rounded-xl px-6 py-4 text-sm text-white placeholder:text-gray-400 focus:outline-none"
+            />
+
+            <button className="bg-yellow-500 hover:bg-yellow-600 transition rounded-xl px-5 py-4 flex items-center justify-center shadow-md">
+                🔍
+            </button>
+
+            </div>
+
+        </div>
+        </section>
+
+      {/* ================= NOMINATION ================= */}
+      <section className="py-24 bg-white">
+        <div className="max-w-lg mx-auto px-6">
+
+          <h2 className="text-center text-2xl font-bold text-[#0c2d5a] mb-10">
+            Nominer un candidat
           </h2>
 
-          <div className="flex gap-3 justify-center">
-            <input
-              placeholder="Entrer l'identifiant du certificat"
-              className="px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none text-white placeholder-gray-300"
+          <div className="bg-[#f5f6f8] border border-gray-200 rounded-2xl shadow-sm p-8 space-y-5">
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <input
+                placeholder="Nom du candidat"
+                className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm placeholder:text-gray-500 focus:outline-none"
+              />
+              <input
+                placeholder="Institution"
+                className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm placeholder:text-gray-500 focus:outline-none"
+              />
+            </div>
+
+            <select className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 focus:outline-none">
+              <option className="text-gray-500">
+                Catégorie de nomination
+              </option>
+              <option>Élève</option>
+              <option>Professeur</option>
+              <option>Institution</option>
+            </select>
+
+            <textarea
+              placeholder="Justification et réalisations..."
+              className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm h-28 resize-none placeholder:text-gray-500 focus:outline-none"
             />
-            <button className="bg-yellow-500 px-4 py-2 rounded-lg text-black font-semibold hover:bg-yellow-600 transition">
-              Vérifier
+
+            <div className="w-full bg-[#e9edf2] border border-gray-300 rounded-lg px-4 py-4 text-sm text-gray-600 flex items-center gap-2">
+              ⬆️ Joindre un fichier (photo, document)
+            </div>
+
+            <button className="w-full bg-yellow-500 text-black font-medium py-3 rounded-lg hover:bg-yellow-600 transition">
+              Soumettre la nomination
             </button>
+
           </div>
 
         </div>
       </section>
-
-      {/* ================= NOMINATION ================= */}
-      {/* ================= NOMINATION ================= */}
-    <section className="py-24 bg-white">
-    <div className="max-w-lg mx-auto px-6">
-
-        <h2 className="text-center text-2xl font-bold text-[#0c2d5a] mb-10">
-        Nominer un candidat
-        </h2>
-
-        <div className="bg-[#f5f6f8] border border-gray-200 rounded-2xl shadow-sm p-8 space-y-5">
-
-        {/* Linha 1 */}
-        <div className="grid md:grid-cols-2 gap-4">
-            <input
-            placeholder="Nom du candidat"
-            className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none"
-            />
-            <input
-            placeholder="Institution"
-            className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none"
-            />
-        </div>
-
-        {/* Select */}
-        <select className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none">
-            <option>Catégorie de nomination</option>
-            <option>Élève</option>
-            <option>Professeur</option>
-            <option>Institution</option>
-        </select>
-
-        {/* Textarea */}
-        <textarea
-            placeholder="Justification et réalisations..."
-            className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm h-28 resize-none focus:outline-none"
-        />
-
-        {/* Upload */}
-        <div className="w-full bg-[#e9edf2] border border-gray-300 rounded-lg px-4 py-4 text-sm text-gray-600 flex items-center gap-2">
-            ⬆️ Joindre un fichier (photo, document)
-        </div>
-
-        {/* Botão */}
-        <button className="w-full bg-yellow-500 text-black font-medium py-3 rounded-lg hover:bg-yellow-600 transition">
-            Soumettre la nomination
-        </button>
-
-        </div>
-
-    </div>
-    </section>
 
     </main>
   )
