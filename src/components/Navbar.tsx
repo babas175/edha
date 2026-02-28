@@ -23,15 +23,13 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="w-full bg-gradient-to-r from-[#04142b] via-[#061a35] to-[#020f24] text-white shadow-md relative z-50 border-b border-white/5">
+    <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-[#04142b] via-[#061a35] to-[#020f24] text-white shadow-md z-50 border-b border-white/5">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
 
-        {/* LOGO */}
         <div className="text-xl font-bold tracking-wide">
           EDHA <span className="text-yellow-400">ACADEMY</span>
         </div>
 
-        {/* DESKTOP NAV */}
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
           {navLinks.map((link) => (
             <Link
@@ -48,16 +46,11 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* MOBILE BUTTON */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden"
-        >
+        <button onClick={() => setOpen(!open)} className="lg:hidden">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* MOBILE MENU */}
       {open && (
         <div className="lg:hidden bg-[#0b2a55] px-6 pb-6 space-y-4">
           {navLinks.map((link) => (

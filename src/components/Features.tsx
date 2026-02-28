@@ -1,59 +1,55 @@
 "use client"
 
-import { Search, GraduationCap, BookOpen, Users } from "lucide-react"
+import { GraduationCap, BookOpen, Settings } from "lucide-react"
 
-export default function Features() {
-  const features = [
+export default function QuickAccess() {
+  const items = [
     {
-      icon: <Search size={20} />,
-      title: "Recherche d'Écoles",
-      desc: "Trouvez les meilleures écoles dans chaque département d'Haïti.",
+      icon: <GraduationCap size={28} />,
+      title: "Espace Élève",
+      desc: "Accédez à vos cours, devoirs et notes en un clic.",
     },
     {
-      icon: <GraduationCap size={20} />,
-      title: "Suivi des Élèves",
-      desc: "Tableau de bord personnalisé pour suivre les progrès académiques.",
+      icon: <BookOpen size={28} />,
+      title: "Espace Professeur",
+      desc: "Gérez vos classes, publiez des cours et suivez les performances.",
     },
     {
-      icon: <BookOpen size={20} />,
-      title: "Outils Enseignants",
-      desc: "Gérez vos classes, devoirs et évaluations en un seul endroit.",
-    },
-    {
-      icon: <Users size={20} />,
-      title: "Administration",
-      desc: "Vue d'ensemble complète du système éducatif national.",
+      icon: <Settings size={28} />,
+      title: "Espace Administrateur",
+      desc: "Pilotez votre établissement avec des outils de gestion complets.",
     },
   ]
 
   return (
     <section className="bg-[#f5f7fa] py-24">
       <div className="max-w-7xl mx-auto px-6 text-center">
+        
         <h2 className="text-3xl font-bold text-[#0b2c59]">
-          Une plateforme complète
+          Accès rapide
         </h2>
 
-        <p className="text-gray-500 mt-4">
-          Tout ce dont le système éducatif haïtien a besoin, réuni en un seul endroit.
-        </p>
-
-        <div className="grid md:grid-cols-4 gap-6 mt-16">
-          {features.map((feature, i) => (
+        <div className="grid md:grid-cols-3 gap-8 mt-16">
+          {items.map((item, i) => (
             <div
               key={i}
-              className="bg-white border border-gray-200 rounded-xl p-8 text-left"
+              className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 p-10 text-center"
             >
-              <div className="w-12 h-12 flex items-center justify-center bg-red-100 text-red-600 rounded-lg mb-6">
-                {feature.icon}
+              <div className="w-14 h-14 mx-auto flex items-center justify-center bg-gray-100 text-[#0b2c59] rounded-xl mb-6">
+                {item.icon}
               </div>
 
-              <h3 className="font-semibold text-[#0b2c59]">
-                {feature.title}
+              <h3 className="text-lg font-semibold text-[#0b2c59]">
+                {item.title}
               </h3>
 
-              <p className="text-gray-500 mt-3 text-sm leading-relaxed">
-                {feature.desc}
+              <p className="text-gray-500 mt-4 text-sm leading-relaxed">
+                {item.desc}
               </p>
+
+              <button className="mt-6 text-amber-500 font-medium hover:underline">
+                Accéder →
+              </button>
             </div>
           ))}
         </div>

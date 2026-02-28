@@ -1,102 +1,89 @@
 "use client"
 
-import {
-  GraduationCap,
-  Mail,
-  Phone,
-  MapPin,
-  Facebook,
-  Twitter,
-  Linkedin,
-} from "lucide-react"
+import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#142e57] text-white">
+    <footer className="w-full bg-gradient-to-r from-[#04142b] via-[#061a35] to-[#020f24] text-white border-t-4 border-red-600">
 
-      {/* Parte principal */}
+      {/* CONTEÚDO PRINCIPAL */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-12">
 
-        {/* Logo + descrição */}
+        {/* COLUNA 1 */}
         <div>
-          <div className="flex items-center gap-2 font-semibold text-lg mb-4">
-            <GraduationCap size={20} />
-            EduHaïti
-          </div>
+          <h3 className="text-lg font-semibold">
+            EDHA <span className="text-yellow-400">ACADEMY</span>
+          </h3>
 
-          <p className="text-gray-300 text-sm leading-relaxed">
-            Plateforme nationale d'éducation numérique visant à connecter
-            élèves, enseignants et administrations à travers toute la République d'Haïti.
+          <p className="text-gray-400 text-sm mt-4 leading-relaxed">
+            La plateforme nationale d'éducation numérique d'Haïti.
+            Moderniser, démocratiser et transformer l'apprentissage
+            pour chaque élève haïtien.
           </p>
         </div>
 
-        {/* Liens rapides */}
+        {/* COLUNA 2 */}
         <div>
-          <h3 className="font-semibold mb-4">Liens rapides</h3>
-          <ul className="space-y-2 text-gray-300 text-sm">
-            <li className="hover:text-white cursor-pointer">Accueil</li>
-            <li className="hover:text-white cursor-pointer">Recherche d'écoles</li>
+          <h4 className="text-yellow-400 font-semibold mb-4 uppercase text-sm tracking-wide">
+            Plateforme
+          </h4>
+
+          <ul className="space-y-3 text-gray-400 text-sm">
             <li className="hover:text-white cursor-pointer">Espace Élève</li>
-            <li className="hover:text-white cursor-pointer">Espace Enseignant</li>
-            <li className="hover:text-white cursor-pointer">Administration</li>
+            <li className="hover:text-white cursor-pointer">Espace Professeur</li>
+            <li className="hover:text-white cursor-pointer">Espace Administrateur</li>
+            <li className="hover:text-white cursor-pointer">Cours gratuits</li>
+            <li className="hover:text-white cursor-pointer">Chercher une institution</li>
           </ul>
         </div>
 
-        {/* Contact */}
+        {/* COLUNA 3 */}
         <div>
-          <h3 className="font-semibold mb-4">Contact</h3>
-          <ul className="space-y-3 text-gray-300 text-sm">
+          <h4 className="text-yellow-400 font-semibold mb-4 uppercase text-sm tracking-wide">
+            Ressources
+          </h4>
+
+          <ul className="space-y-3 text-gray-400 text-sm">
+            <li className="hover:text-white cursor-pointer">Impact</li>
+            <li className="hover:text-white cursor-pointer">Blog</li>
+            <li className="hover:text-white cursor-pointer">Mérite National</li>
+            <li className="hover:text-white cursor-pointer">Partenariats</li>
+            <li className="hover:text-white cursor-pointer">Sécurité</li>
+          </ul>
+        </div>
+
+        {/* COLUNA 4 */}
+        <div>
+          <h4 className="text-yellow-400 font-semibold mb-4 uppercase text-sm tracking-wide">
+            Contact
+          </h4>
+
+          <ul className="space-y-4 text-gray-400 text-sm">
+
             <li className="flex items-center gap-2">
-              <MapPin size={16} />
+              <Mail size={16} className="text-yellow-400" />
+              info@edha-academy.ht
+            </li>
+
+            <li className="flex items-center gap-2">
+              <Phone size={16} className="text-yellow-400" />
+              +509 2813-XXXX
+            </li>
+
+            <li className="flex items-center gap-2">
+              <MapPin size={16} className="text-yellow-400" />
               Port-au-Prince, Haïti
             </li>
-            <li className="flex items-center gap-2">
-              <Phone size={16} />
-              +509 22 00 00 00
-            </li>
-            <li className="flex items-center gap-2">
-              <Mail size={16} />
-              contact@edu.ht
-            </li>
+
           </ul>
-        </div>
-
-        {/* Réseaux sociaux */}
-        <div>
-          <h3 className="font-semibold mb-4">Suivez-nous</h3>
-
-          <div className="flex gap-4">
-            <div className="bg-white/10 p-3 rounded-lg hover:bg-white/20 cursor-pointer">
-              <Facebook size={18} />
-            </div>
-
-            <div className="bg-white/10 p-3 rounded-lg hover:bg-white/20 cursor-pointer">
-              <Twitter size={18} />
-            </div>
-
-            <div className="bg-white/10 p-3 rounded-lg hover:bg-white/20 cursor-pointer">
-              <Linkedin size={18} />
-            </div>
-          </div>
         </div>
 
       </div>
 
-      {/* Linha inferior */}
+      {/* LINHA INFERIOR */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
-          <p>
-            © 2026 EDHA. Tous droits réservés.
-          </p>
-
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <span className="hover:text-white cursor-pointer">
-              Politique de confidentialité
-            </span>
-            <span className="hover:text-white cursor-pointer">
-              Conditions d'utilisation
-            </span>
-          </div>
+        <div className="max-w-7xl mx-auto px-6 py-6 text-center text-gray-400 text-sm">
+          © 2026 EDHA Academy – Tous droits réservés.
         </div>
       </div>
 
